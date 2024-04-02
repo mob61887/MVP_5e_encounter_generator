@@ -33,10 +33,10 @@ function EncounterContext( {setEncounterInfo}) {
   }
 
   return (
-    <form id="encounterContextForm">
+    <form id="encounter_context_form">
       <div>
         <p>You're party is:</p>
-        <select id="encounterDropdown" name="encounterDropdown" defaultValue="" onChange={handleEncounterContextChange}>
+        <select id="encounter_dropdown" name="encounter_dropdown" defaultValue="" onChange={handleEncounterContextChange}>
           <option value="" disabled>Select One</option>
           <option value="Traveling">Traveling</option>
           <option value="Exploring">Exploring</option>

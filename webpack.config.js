@@ -30,7 +30,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        GIT_API_KEY: JSON.stringify(process.env.GIT_API_KEY),
+        SEVER_IP: JSON.stringify(process.env.SEVER_IP),
       },
     }),
   ],

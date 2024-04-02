@@ -9,7 +9,7 @@ function PartyInfo ( {setPartySize, setPartyLevel} ) {
   }
 
   return (
-    <form className="id">
+    <form id="party_info">
       <div>
       <label htmlFor="partySize">Party Size:</label>
       <input type="number" id="partySize" name="partySize" min="1" max="10" defaultValue="4" onChange={handlePartySizeChange}></input>
