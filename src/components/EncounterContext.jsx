@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-function EncounterContext( {setEncounterInfo}) {
+function EncounterContext({setEncounterInfo}) {
   const [encounterContext, setEncounterContext] = useState('');
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');

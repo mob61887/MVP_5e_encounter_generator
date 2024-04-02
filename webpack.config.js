@@ -30,7 +30,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        SEVER_IP: JSON.stringify(process.env.SEVER_IP),
+        SERVER_IP: JSON.stringify(process.env.SERVER_IP),
+        PORT: JSON.stringify(process.env.PORT),
       },
     }),
   ],

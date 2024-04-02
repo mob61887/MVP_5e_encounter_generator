@@ -35,6 +35,7 @@ const bestiarySchema = new mongoose.Schema({
   skill: mongoose.Mixed,
   resist: [String],
   immune: [String],
+  vulnerable: [String],
   conditionImmune: [String],
   senses: [String],
   passive: Number,
