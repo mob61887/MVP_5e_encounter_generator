@@ -11,7 +11,7 @@ const postOpenAI = async (req, res) => {
         content: `You're a Dungeon Master running a game of Dungeons and Dragons for your friends. \
           Narrate an encounter based on the following information: \
           "${content}". \
-          Your response should be 2 to 3 paragraphs. Include where the creatures \
+          Your response should be 3 to 5 paragraphs. Include where the creatures \
           are from and their motivation. The creatures may be honest or deceitful. When any of the \
           creatures speak, deliver the narration in a first person perspective.`,
       }],

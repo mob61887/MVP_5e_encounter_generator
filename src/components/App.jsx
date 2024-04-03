@@ -4,6 +4,7 @@ import EncounterContext from './EncounterContext';
 import EncounterDemeanor from './EncounterDemeanor';
 import Bestiary from './Bestiary';
 import EncounterCreatures from './EncounterCreatures';
+import EncounterGenerator from './EncounterGenerator';
 import bridge from './bridge';
 
 function App() {
@@ -23,29 +24,22 @@ function App() {
       });
   }
 
-  function fetchEncounter() {
-    bridge.getEncounter(prompt)
-      .then((response) => {
-        setEncounter(response.data.choices[0].message.content);
-      });
-  }
-
   function composePrompt() {
-    let encounter = '';
-    encounter += encounterInfo;
+    let composition = '';
+    composition += encounterInfo;
 
-    encounter += ` The encounter should be ${encounterDemeanor}.`;
+    composition += ` The encounter should be ${encounterDemeanor}.`;
 
     if (encounterDemeanor === 'Friendly' || encounterDemeanor === 'Neutral') {
-      encounter += ' The creatures should have a conflict which the players can either aid with or disregard.';
+      composition += ' The creatures should have a conflict which the players can either aid with or disregard.';
     }
 
     const creatureCounts = {};
     let creatures = Object.entries(creatureCounts).map(([creature, count]) => `${count} ${creature}${count > 1 ? 's' : ''}`);
     creatures = creatures.join(', ');
-    encounter += ` The encounter should include ${creatures}.`;
+    composition += ` The encounter should include ${creatures}.`;
 
-    setPrompt(`${encounter}`);
+    setPrompt(`${composition}`);
   }
 
   useEffect(() => {
@@ -88,6 +82,12 @@ function App() {
       <EncounterCreatures
         encounterCreatures={encounterCreatures}
         setEncounterCreatures={setEncounterCreatures}
+      />
+      <EncounterGenerator
+        encounter={encounter}
+        setEncounter={setEncounter}
+        bridge={bridge}
+        prompt={prompt}
       />
     </div>
   );
