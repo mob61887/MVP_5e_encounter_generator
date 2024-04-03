@@ -1,10 +1,17 @@
 import React from 'react';
 import BestiaryRow from './BestiaryRow';
+import './componentStyles/bestiary';
 
-function Bestiary({bestiaryData}) {
+function Bestiary({bestiaryData, encounterCreatures, setEncounterCreatures}) {
+
   return (
-    <div>
-      {bestiaryData.map((creature) => <BestiaryRow key={creature._id} creature={creature} />)}
+    <div id="bestiary">
+      {bestiaryData.map((creature) => <BestiaryRow
+        key={`bestiary ${creature._id}`}
+        creature={creature}
+        encounterCreatures={encounterCreatures}
+        setEncounterCreatures={setEncounterCreatures}
+      />)}
     </div>
   );
 }

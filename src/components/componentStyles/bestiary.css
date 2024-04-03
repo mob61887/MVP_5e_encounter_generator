@@ -1,0 +1,8 @@
+#bestiary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    max-height: 300px;
+    overflow: auto;
+}

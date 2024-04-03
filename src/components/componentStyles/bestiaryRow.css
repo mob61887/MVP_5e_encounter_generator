@@ -1,7 +1,8 @@
 .bestiary_row {
     display: flex;
+    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    width: 750px;
+    width: 100%;
 }

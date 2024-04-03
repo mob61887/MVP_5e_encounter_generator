@@ -1,13 +1,17 @@
 const React = require('react');
-import './componentStyles/bestiaryRow.css';
+import './componentStyles/bestiaryRow';
 
-function BestiaryRow({creature}) {
+function BestiaryRow({creature, setEncounterCreatures, encounterCreatures}) {
+  function handleAddToEncounterClick() {
+    setEncounterCreatures([...encounterCreatures, creature]);
+  }
+
   return (
-    <div className="bestiary_row">
+    <div className="bestiary_row" onClick={handleAddToEncounterClick}>
       <span>{creature.name}</span>
-      <span>{creature.type}</span>
+      {/* <span>{creature.type}</span>
+      <span>{creature.source}</span> */}
       <span>{creature.cr}</span>
-      <span>{creature.source}</span>
     </div>
   );
 }

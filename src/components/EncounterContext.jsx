@@ -5,8 +5,18 @@ function EncounterContext({setEncounterInfo}) {
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');
   const [location, setLocation] = useState('');
+  const [timeOfDay, setTimeOfDay] = useState('');
   const [objective, setObjective] = useState('');
   const [customContext, setCustomContext] = useState('');
+
+  useEffect(() => {
+    const prompt = encounterContext === 'Traveling' ? `Your party is traveling from ${origin} to ${destination}.`
+      : encounterContext === 'Exploring' ? `Your party is exploring the area of ${location}.`
+      : encounterContext === 'Resting' ? `Your party is resting  in ${location} during the ${timeOfDay}.`
+      : encounterContext === 'Searching' ? `Your party is searching for ${objective} in ${location}.`
+      : `Your party is ${customContext}.`;
+    setEncounterInfo(prompt);
+  }, [encounterContext, origin, destination, location, timeOfDay, objective, customContext]);
 
   function handleEncounterContextChange(event) {
     setEncounterContext(event.target.value);
@@ -22,6 +32,10 @@ function EncounterContext({setEncounterInfo}) {
 
   function handleLocationChange(event) {
     setLocation(event.target.value);
+  }
+
+  function handleTimeOfDayChange(event) {
+    setTimeOfDay(event.target.value);
   }
 
   function handleObjectiveChange(event) {
@@ -62,6 +76,13 @@ function EncounterContext({setEncounterInfo}) {
           <>
             <span> at </span>
             <input type="text" id="restingLocation" name="restingLocation" placeholder="Enter a Location" onChange={handleLocationChange}></input>
+            <span> during the </span>
+            <select id="timeOfDay" name="timeOfDay" defaultValue="" onChange={handleTimeOfDayChange}>
+              <option value="" disabled>Select One</option>
+              <option value="morning">morning</option>
+              <option value="afternoon">afternoon</option>
+              <option value="evening">evening</option>
+            </select>
           </>
         )}
         {encounterContext === "Searching" && (

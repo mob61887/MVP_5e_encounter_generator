@@ -9,6 +9,9 @@ const bridge = {
         count: count
     }
 }),
+  postOpenAI: (prompt) => axios.post(`http://${process.env.SERVER_IP}:${process.env.PORT}/openai`, {
+    prompt: prompt
+  }),
   getFluff: (key, val) => axios.get(`${process.env.SERVER_IP}:${process.env.PORT}/fluff?key=${key}&val=${val}`),
 };
 
