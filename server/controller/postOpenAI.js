@@ -1,5 +1,5 @@
 const axios = require('axios');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 const postOpenAI = async (req, res) => {
   try {
@@ -14,18 +14,17 @@ const postOpenAI = async (req, res) => {
           Your response should be 2 to 3 paragraphs. Include where the creatures \
           are from and their motivation. The creatures may be honest or deceitful. When any of the \
           creatures speak, deliver the narration in a first person perspective.`,
-      }]
+      }],
     }, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-      }
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      },
     });
     res.status(200).send(response.data);
   } catch (error) {
     res.status(500).send(error);
   }
 };
-
 
 module.exports = postOpenAI;

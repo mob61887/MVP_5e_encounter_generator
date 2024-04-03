@@ -1,7 +1,7 @@
-const {Bestiary} = require('../database/models');
+const { Bestiary } = require('../database/models');
 
 async function getCreatures(searchKey, searchValue, page = 1, count = 1) {
-  const queryCondition = searchKey && searchValue ? {[searchKey]: searchValue} : {};
+  const queryCondition = searchKey && searchValue ? { [searchKey]: searchValue } : {};
   return Bestiary.find(queryCondition, {
     name: 1,
     source: 1,
@@ -34,15 +34,12 @@ async function getCreatures(searchKey, searchValue, page = 1, count = 1) {
     legendary: 1,
     environment: 1,
     attachedItems: 1,
-    languages: 1,
     conditionImmune: 1,
-    senses: 1,
-    languages: 1,
     hasFluff: 1,
   })
-  .sort({name: 'asc'})
-  .skip((page - 1) * count)
-  .limit(count);
+    .sort({ name: 'asc' })
+    .skip((page - 1) * count)
+    .limit(count);
 }
 
 module.exports = getCreatures;

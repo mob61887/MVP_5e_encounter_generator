@@ -1,11 +1,10 @@
 import React from 'react';
 
-function EncounterGenerator({prompt}) {
-
+function EncounterGenerator({ encounter, fetchEncounter }) {
   return (
     <div id="encounter_generator">
-      <p>{prompt}</p>
-      <button id="generate_encounter_button">Generate Encounter</button>
+      {encounter.split('\n').map((paragraph) => <p>{paragraph}</p>)}
+      <button id="generate_encounter_button" type="button" onClick={fetchEncounter}>Generate Encounter</button>
     </div>
   );
 }
