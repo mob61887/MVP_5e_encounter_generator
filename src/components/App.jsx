@@ -97,6 +97,7 @@ function App() {
         <div className="app_column app_column_2">
           <Bestiary
             bestiaryData={bestiaryDataFiltered}
+            setBestiaryData={setBestiaryDataFiltered}
             setBestiaryFilter={setBestiaryFilter}
             encounterCreatures={encounterCreatures}
             setEncounterCreatures={setEncounterCreatures}
@@ -119,6 +120,7 @@ function App() {
           <br />
           <br />
           <GenerateEncounterButton
+            encounter={encounter}
             setEncounter={setEncounter}
             bridge={bridge}
             prompt={prompt}

@@ -1,0 +1,21 @@
+#bestiary_header_wrapper {
+  width: 100%;
+}
+
+#bestiary_header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+#bestiary_header_name {
+  padding: 0 20px 0 20px;
+  border-right: 2px solid #000;
+}
+
+#bestiary_header_cr {
+  padding: 0 10px 0 10px;
+  border-left: 2px solid #000;
+}

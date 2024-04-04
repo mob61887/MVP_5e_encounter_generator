@@ -4,10 +4,12 @@ function GenerateEncounterButton({ setEncounter, bridge, prompt }) {
   const [buttonStatus, setButtonStatus] = useState('idle');
 
   async function fetchEncounter() {
-    bridge.getEncounter(prompt)
-      .then((response) => {
-        setEncounter(response.data.choices[0].message.content);
-      });
+    try {
+      const response = await bridge.getEncounter(prompt);
+      setEncounter(response.data.choices[0].message.content);
+    } catch (error) {
+      setEncounter(`Failed to fetch encounter: ${error}`);
+    }
   }
 
   async function handleWriteEncounterClick() {
@@ -15,12 +17,17 @@ function GenerateEncounterButton({ setEncounter, bridge, prompt }) {
     await fetchEncounter();
     setButtonStatus('idle');
   }
-  return buttonStatus === 'idle' ? (
-    <button id="generate_encounter_button" type="button" onClick={handleWriteEncounterClick}>Write Encounter</button>
-  )
-    : (
-      <button id="generate_encounter_button" type="button" disabled>Loading...</button>
-    );
+
+  return (
+    <button
+      id="generate_encounter_button"
+      type="button"
+      onClick={handleWriteEncounterClick}
+      disabled={buttonStatus === 'loading'}
+    >
+      {buttonStatus === 'idle' ? 'Write Encounter' : 'Loading...'}
+    </button>
+  );
 }
 
 export default GenerateEncounterButton;
