@@ -4,15 +4,18 @@ import './componentStyles/encounterCreatures';
 
 function EncounterCreatures({ encounterCreatures, setEncounterCreatures }) {
   return (
-    <div id="encounter_creatures">
-      {encounterCreatures.map((creature, index) => (
-        <EncounterCreaturesRow
-          creature={creature}
-          encounterCreatures={encounterCreatures}
-          setEncounterCreatures={setEncounterCreatures}
-          key={`encounter creature ${creature._id}-${index}`}
-        />
-      ))}
+    <div id="encounter_creatures_wrapper">
+      <h2>Creatures</h2>
+      <div id="encounter_creatures">
+        {encounterCreatures.map((creature, index) => (
+          <EncounterCreaturesRow
+            creature={creature}
+            encounterCreatures={encounterCreatures}
+            setEncounterCreatures={setEncounterCreatures}
+            key={`encounter creature ${creature._id}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,9 +1,25 @@
-const React = require('react');
 import './componentStyles/bestiaryRow';
 
-function BestiaryRow({creature, setEncounterCreatures, encounterCreatures}) {
+const React = require('react');
+
+function BestiaryRow({ creature, setEncounterCreatures, encounterCreatures }) {
   function handleAddToEncounterClick() {
-    setEncounterCreatures([...encounterCreatures, creature]);
+    // Check if the creature already exists in the array
+    const existingCreatureIndex = encounterCreatures.findIndex((c) => c.name === creature.name);
+
+    if (existingCreatureIndex >= 0) {
+      // If it exists, create a new array with the updated creature quantity
+      const newEncounterCreatures = encounterCreatures.map((c, index) => {
+        if (index === existingCreatureIndex) {
+          return { ...c, quantity: c.quantity + 1 }; // Increment the quantity
+        }
+        return c;
+      });
+      setEncounterCreatures(newEncounterCreatures);
+    } else {
+      // If it does not exist, add the new creature with an initial quantity of 1
+      setEncounterCreatures([...encounterCreatures, { ...creature, quantity: 1 }]);
+    }
   }
 
   return (

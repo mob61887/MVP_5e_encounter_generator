@@ -1,0 +1,8 @@
+#encounter_generator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  max-height: 75%;
+  overflow: auto;
+}

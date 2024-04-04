@@ -1,5 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import React, { useState, useEffect } from 'react';
+import './componentStyles/encounterContext.css';
 
 function EncounterContext({ setEncounterInfo }) {
   const [encounterContext, setEncounterContext] = useState('');
@@ -50,7 +51,8 @@ function EncounterContext({ setEncounterInfo }) {
   return (
     <form id="encounter_context_form">
       <div>
-        <p>You&apos;re party is:</p>
+        <span>You&apos;re party is: </span>
+        <br />
         <select id="encounter_dropdown" name="encounter_dropdown" defaultValue="" onChange={handleEncounterContextChange}>
           <option value="" disabled>Select One</option>
           <option value="Traveling">Traveling</option>
@@ -59,25 +61,36 @@ function EncounterContext({ setEncounterInfo }) {
           <option value="Searching">Searching</option>
           <option value="Custom">Custom</option>
         </select>
+        <br />
+        <br />
         {encounterContext === 'Traveling' && (
           <>
             <span> from </span>
+            <br />
             <input type="text" id="travelingFrom" name="travelingFrom" placeholder="Enter a Starting Location" onChange={handleOriginChange} />
+            <br />
+            <br />
             <span> to </span>
+            <br />
             <input type="text" id="travelingTo" name="travelingTo" placeholder="Enter a Destination" onChange={handleDestinationChange} />
           </>
         )}
         {encounterContext === 'Exploring' && (
           <>
             <span> the area of </span>
+            <br />
             <input type="text" id="exploringLocation" name="exploringLocation" placeholder="Enter a Location" onChange={handleLocationChange} />
           </>
         )}
         {encounterContext === 'Resting' && (
           <>
             <span> at </span>
+            <br />
             <input type="text" id="restingLocation" name="restingLocation" placeholder="Enter a Location" onChange={handleLocationChange} />
+            <br />
+            <br />
             <span> during the </span>
+            <br />
             <select id="timeOfDay" name="timeOfDay" defaultValue="" onChange={handleTimeOfDayChange}>
               <option value="" disabled>Select One</option>
               <option value="morning">morning</option>
@@ -89,17 +102,24 @@ function EncounterContext({ setEncounterInfo }) {
         {encounterContext === 'Searching' && (
           <>
             <span> for </span>
+            <br />
             <input type="text" id="searchingFor" name="searchingFor" placeholder="Enter an Objective" onChange={handleObjectiveChange} />
+            <br />
+            <br />
             <span> in </span>
+            <br />
             <input type="text" id="searchingLocation" name="searchingLocation" placeholder="Enter a Location" onChange={handleLocationChange} />
           </>
         )}
         {encounterContext === 'Custom' && (
           <>
             <span> Group Activity: </span>
+            <br />
             <input type="textarea" id="customFor" name="customFor" placeholder="Enter Your Custom Activity" onChange={handleCustomContextChange} />
           </>
         )}
+        <br />
+        <br />
       </div>
     </form>
   );

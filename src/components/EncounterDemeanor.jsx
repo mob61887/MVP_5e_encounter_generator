@@ -1,4 +1,5 @@
 import React from 'react';
+import './componentStyles/encounterDemeanor';
 
 function EncounterDemeanor({ setEncounterDemeanor }) {
   function handleEncounterDemeanorChange(event) {

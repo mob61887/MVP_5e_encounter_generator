@@ -1,0 +1,11 @@
+#encounter_context_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+#encounter_context_form * {
+  text-align: center;
+  align-items: center;
+}
