@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { IoPersonRemoveSharp } from 'react-icons/io5';
+import './componentStyles/partyRow.css';
 
 function PartyRow({ party, setParty, i }) {
   const findMemberIndexById = (id) => party.findIndex((member) => member.id === id);
@@ -30,7 +32,7 @@ function PartyRow({ party, setParty, i }) {
   }
 
   return (
-    <div>
+    <div className="party_row">
       <span>Level </span>
       <input
         type="number"
@@ -41,7 +43,12 @@ function PartyRow({ party, setParty, i }) {
         value={level} // Controlled component
         onChange={handleLevelChange}
       />
-      <span onClick={handlePlayerRemoval}> X</span>
+      <span
+        className="remove-player_button"
+        onClick={handlePlayerRemoval}>
+        {' '}
+        <IoPersonRemoveSharp />
+      </span>
     </div>
   );
 }

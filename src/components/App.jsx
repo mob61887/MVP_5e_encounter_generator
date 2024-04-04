@@ -7,6 +7,7 @@ import GenerateEncounterButton from './GenerateEncounterButton';
 import Bestiary from './Bestiary';
 import EncounterCreatures from './EncounterCreatures';
 import EncounterGenerator from './EncounterGenerator';
+import Instructions from './Instructions';
 import bridge from './bridge';
 import './componentStyles/app.css';
 
@@ -124,12 +125,17 @@ function App() {
           />
         </div>
       </div>
-      <EncounterGenerator
-        encounter={encounter}
-        setEncounter={setEncounter}
-        bridge={bridge}
-        prompt={prompt}
-      />
+      <div id="bottom_row">
+        {encounter === '' && <Instructions />}
+        {encounter !== '' && (
+        <EncounterGenerator
+          encounter={encounter}
+          setEncounter={setEncounter}
+          bridge={bridge}
+          prompt={prompt}
+        />
+        )}
+      </div>
     </div>
   );
 }

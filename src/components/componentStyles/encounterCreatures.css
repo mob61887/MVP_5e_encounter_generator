@@ -5,8 +5,8 @@
   height: auto;
   width: 100%;
   overflow: auto;
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer 10+ */
+  /* scrollbar-width: none;
+  -ms-overflow-style: none; */
 }
 
 #encounter_creatures_wrapper {
@@ -16,11 +16,11 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer 10+ */
+  /* scrollbar-width: none;
+  -ms-overflow-style: none; */
 }
 
-#encounter_creatures::-webkit-scrollbar,
+/* #encounter_creatures::-webkit-scrollbar,
 #encounter_creatures_wrapper::-webkit-scrollbar {
-  display: none; /* Hide the scroll bar in WebKit-based browsers */
-}
+  display: none;
+} */

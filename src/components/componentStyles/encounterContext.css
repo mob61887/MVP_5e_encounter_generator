@@ -9,3 +9,12 @@
   text-align: center;
   align-items: center;
 }
+
+#custom_activity {
+  height: 63px;
+  width: 100%;
+  max-width: 200px;
+  overflow-y: auto;
+  resize: vertical;
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -67,26 +67,26 @@ function EncounterContext({ setEncounterInfo }) {
           <>
             <span> from </span>
             <br />
-            <input type="text" id="travelingFrom" name="travelingFrom" placeholder="Enter a Starting Location" onChange={handleOriginChange} />
+            <input type="text" id="traveling_from" name="traveling_from" placeholder="Enter a Starting Location" onChange={handleOriginChange} />
             <br />
             <br />
             <span> to </span>
             <br />
-            <input type="text" id="travelingTo" name="travelingTo" placeholder="Enter a Destination" onChange={handleDestinationChange} />
+            <input type="text" id="traveling_to" name="traveling_to" placeholder="Enter a Destination" onChange={handleDestinationChange} />
           </>
         )}
         {encounterContext === 'Exploring' && (
           <>
             <span> the area of </span>
             <br />
-            <input type="text" id="exploringLocation" name="exploringLocation" placeholder="Enter a Location" onChange={handleLocationChange} />
+            <input type="text" id="exploring_location" name="exploring_location" placeholder="Enter a Location" onChange={handleLocationChange} />
           </>
         )}
         {encounterContext === 'Resting' && (
           <>
             <span> at </span>
             <br />
-            <input type="text" id="restingLocation" name="restingLocation" placeholder="Enter a Location" onChange={handleLocationChange} />
+            <input type="text" id="resting_location" name="resting_location" placeholder="Enter a Location" onChange={handleLocationChange} />
             <br />
             <br />
             <span> during the </span>
@@ -103,19 +103,19 @@ function EncounterContext({ setEncounterInfo }) {
           <>
             <span> for </span>
             <br />
-            <input type="text" id="searchingFor" name="searchingFor" placeholder="Enter an Objective" onChange={handleObjectiveChange} />
+            <input type="text" id="searching_for" name="searchingFor" placeholder="Enter an Objective" onChange={handleObjectiveChange} />
             <br />
             <br />
             <span> in </span>
             <br />
-            <input type="text" id="searchingLocation" name="searchingLocation" placeholder="Enter a Location" onChange={handleLocationChange} />
+            <input type="text" id="searching_location" name="searchingLocation" placeholder="Enter a Location" onChange={handleLocationChange} />
           </>
         )}
         {encounterContext === 'Custom' && (
           <>
             <span> Group Activity: </span>
             <br />
-            <input type="textarea" id="customFor" name="customFor" placeholder="Enter Your Custom Activity" onChange={handleCustomContextChange} />
+            <textarea id="custom_activity" name="custom_activity" placeholder="Enter Your Custom Activity" onChange={handleCustomContextChange} />
           </>
         )}
         <br />

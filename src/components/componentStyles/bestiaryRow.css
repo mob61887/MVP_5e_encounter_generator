@@ -6,3 +6,8 @@
     width: 100%;
     padding: 0px 10px 0 10px;
 }
+
+.bestiary_row:hover {
+    background-color: rgba(0, 0, 0, .5);
+    color: rgba(255, 255, 255, 1);
+}

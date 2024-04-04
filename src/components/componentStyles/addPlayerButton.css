@@ -1,0 +1,10 @@
+#add_player_button {
+  font-size: 15px;
+  padding: 2px 5px 0 5px;
+}
+
+#add_player_icon {
+  display: inline-flex;
+  align-items: flex-end;
+  font-size: 25px;
+}
