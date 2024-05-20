@@ -2,7 +2,7 @@
   "name": "mvp_5e_encounter_generator",
   "version": "1.0.0",
   "description": "An encounter generator for D&D 5th edition",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "client-dev": "npx webpack --watch",
     "server-dev": "nodemon server/ --watch"
