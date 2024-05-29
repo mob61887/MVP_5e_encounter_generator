@@ -16,6 +16,7 @@ app.set('trust proxy', true);
 app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
+app.use('/5e', express.static(Path.join(__dirname, '../dist')));
 app.use(express.static(Path.join(__dirname, '../dist')));
 
 app.get('/creatures', (req, res) => { getCreatures(req, res); });
