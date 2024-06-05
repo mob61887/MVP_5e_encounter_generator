@@ -29,6 +29,10 @@ The D&D Encounter Generator is an innovative tool designed to enhance the role-p
 <li>Narrative Generation: Utilizing OpenAI's ChatGPT completion API, the generator creates immersive and engaging stories that captivate players and enhance the gameplay experience.</li>
 <p>This tool empowers Dungeon Masters to create immersive and exciting gameplay experiences for their players, fostering creativity, strategy, and collaboration in the world of Dungeons & Dragons.</p>
 
+<p>
+This is a minimum viable product (MVP) which I am in the process of refactoring into a mobile app for Android and IOS.
+</p>
+
 </ul>
 
 ### Built With
