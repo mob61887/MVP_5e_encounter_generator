@@ -1,4 +1,4 @@
-const allowedOrigins = [`http://${process.env.SERVER_IP}:${process.env.PORT}`];
+const allowedOrigins = [`https://${process.env.SERVER_IP}:${process.env.PORT}`];
 
 module.exports = function corsRestricted(req, res, next) {
   const { origin } = req.headers;
@@ -8,7 +8,7 @@ module.exports = function corsRestricted(req, res, next) {
   }
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
     res.sendStatus(204);
   } else {
     next();
